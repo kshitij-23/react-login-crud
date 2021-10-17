@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import CookieAccess from './CookieAccess';
+import Cookies from 'js-cookie';
 
 class Login extends Component {
 
@@ -23,7 +23,9 @@ class Login extends Component {
         axios.post('http://localhost:8080/login', loginData)
              .then(response => { 
                     console.log(response);
-                    CookieAccess.
+                    var token = response.data.access_token;
+                    Cookies.set('token', token);
+                    // 
                 })
              .catch(error => {console.error(error)});
         alert('Submit Event ' +this.state.username +" : "+this.state.password);

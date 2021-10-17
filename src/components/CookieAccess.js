@@ -8,10 +8,10 @@ class CookieAccess extends Component {
       }
 
     saveTokenIntoCookie = (cookie) =>{
-        setCookie('jwt_token', cookie);
+        //setCookie('jwt_token', cookie);
     }
     getToekFromCookie = () => {
-        return coockies.get('jwt_token');
+        //return coockies.get('jwt_token');
     }
 
     render() {
